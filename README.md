@@ -2,7 +2,7 @@
 
 A repository-level harness for building software with coding agents. It is a set of Markdown rules, templates and thin tool registrations that tell agents how to route a task, who does what, where knowledge is written and how it stays current as a project grows.
 
-It was distilled from a production project where it evolved over several months of daily use with Claude Code and Codex working in the same repository. The project-specific content has been removed. What remains is the mechanism and the reasons behind it.
+It was distilled from production projects, where it evolved through daily use with Claude Code and Codex working in the same repository. The project-specific content has been removed. What remains is the mechanism and the reasons behind it.
 
 ## What it gives a project
 
