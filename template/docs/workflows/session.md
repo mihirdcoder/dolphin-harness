@@ -13,6 +13,7 @@ A chat can contain several [tasks](../glossary.md). Do not assign one workflow o
 | Change scope materially | Reclassify, and revisit the affected investigation, planning or design gates before dependent work |
 | Authorize a next phase | Advance only within that authorization, keeping prerequisite gates |
 | Start a different task | Establish its context and keep unfinished delivery checkpoints for later resume |
+| Ask to make finished work reusable ("make this a workflow", "turn this into an agent") | Route it as a new task under [knowledge maintenance](knowledge-maintenance.md#changing-the-harness), using [change-harness](../../.agents/skills/change-harness/SKILL.md); the finished task's record and diff are its evidence |
 
 Classify at these transitions, not after every message. A side question does not discard or restart a delivery. An assignment finishing is not the parent task finishing.
 

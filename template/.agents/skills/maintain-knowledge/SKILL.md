@@ -1,6 +1,6 @@
 ---
 name: maintain-knowledge
-description: Reconcile approved decisions, implementation knowledge, workflows, role reading routes and delivery records. Use for durable guidance changes, documentation migrations, meaningful delivery transitions, review handoff or completion, after publication or a reported merge, and when adding, changing or removing a workflow, role, gate or standard. Does not approve product policy.
+description: Reconcile approved decisions, requirements, standards, implementation references, reading routes and delivery records. Use for durable guidance and documentation changes, documentation migrations, adding or changing a standard, meaningful delivery transitions, review handoff or completion, and after publication or a reported merge. Not for adding, changing or retiring a workflow, role, gate or skill; use change-harness for those. Does not approve product policy.
 ---
 
 # Maintain repository knowledge
@@ -21,11 +21,11 @@ Establish what changed or was learned, the actual approval and status evidence, 
 6. **Apply the closeout gate.** Before completion review and at handoff, inspect the actual changed files and the references that consume them. Record a disposition for each affected document: updated, verified unchanged with a reason, or outstanding with an owner. Include shared indexes and the capability's history index, not only the files edited for the feature. Rewrite the capability's current documents so they describe the product as it now is; leave earlier change records untouched. Keep current status short and move long results to `evidence.md`.
 7. **Retire carefully.** Before removing a file, inventory its facts, rationale, approvals, results and unresolved gaps against the documents that will own them. Extract what is missing without copying the whole narrative. Record the Git revision, path and section, verify current callers, and confirm the commit will stay reachable after the intended merge.
 8. **Update the delivery record.** At a meaningful transition, update the checkpoint, append the transition, and maintain the work index entry. On resume, verify Git, the diff, dependencies, findings and remote state before following the next action. After an authorized publication, record the observed result. Keep implementation, verification, publication and deployment separate.
-9. **Verify.** Check relative links and anchors, stable IDs, agreement between approval and status, and source claims. Follow one realistic task route. Check registrations and symlinks after a role or skill change. A complex workflow change needs an actual bounded run; never claim reading or delegation from final prose alone.
+9. **Verify.** Check relative links and anchors, stable IDs, agreement between approval and status, and source claims. Follow one realistic task route. Check registrations and symlinks after a role or skill change with the [change-harness check script](../change-harness/scripts/check_harness.py). A complex workflow change needs an actual bounded run; never claim reading or delegation from final prose alone.
 
 ## Changing the harness
 
-For a workflow, role, gate, skill or standard, follow the six steps in [changing the harness](../../../docs/workflows/knowledge-maintenance.md#changing-the-harness): evidence, check for extension, decision, write from the template, connect, prove. The same steps apply to a removal.
+For a workflow, role, gate or skill, use [change-harness](../change-harness/SKILL.md). For a standard, follow the six steps in [changing the harness](../../../docs/workflows/knowledge-maintenance.md#changing-the-harness) with this procedure: evidence, check for extension, decision, write from the template, connect, prove. The same steps apply to a removal.
 
 ## Example: an approved interface rule
 

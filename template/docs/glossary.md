@@ -12,8 +12,8 @@ Layer: framework core. Each term has one definition here. Other files link to it
 | Workflow | The lifecycle selected for a kind of task: trigger, context, steps and owners, stages, gates, output and resume. |
 | Stage | A named position inside a workflow. Each workflow declares its own stage names. |
 | Gate | Evidence that must exist before a delivery moves to the next stage. Every gate links the decision that added it. |
-| Skill | A reusable procedure with concrete steps, discovered by the tool and called from workflows. |
-| Role | A recurring responsibility with one canonical brief in `docs/agents/`. |
+| Skill | A reusable procedure with concrete steps, discovered by the tool and called from workflows or by name. |
+| Role | A recurring responsibility with one canonical brief in `docs/agents/`. Also called an agent. |
 | Loader | A tool-specific registration that makes a role invocable and tells it to read its brief. |
 | Main session | The session the user talks to. It routes, assigns, integrates and owns checkpoints and knowledge reconciliation. |
 | Domain | An area of the project with its own expertise and entry point. |

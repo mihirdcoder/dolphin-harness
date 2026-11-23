@@ -4,7 +4,8 @@ Before substantive work, read [the task router](docs/README.md) and [session pro
 
 - Questions about product behavior: the [question workflow](docs/workflows/question.md) and the [capability index](docs/capabilities/README.md).
 - Settling with {{PRODUCT_OWNER}} what a feature or change is, before a plan exists: [planning workflow](docs/workflows/planning.md).
-- Durable decisions, documentation, role or workflow changes, and delivery reconciliation: [maintain-knowledge](.agents/skills/maintain-knowledge/SKILL.md).
+- Durable decisions, documentation and delivery reconciliation: [maintain-knowledge](.agents/skills/maintain-knowledge/SKILL.md).
+- Adding, changing or retiring a workflow, role (agent), gate or skill, including making work you just finished reusable under a name: [change-harness](.agents/skills/change-harness/SKILL.md).
 
 For development, read the [development standard](docs/standards/development.md) and the standards the task actually touches. New features and material changes follow [feature delivery](docs/workflows/feature-delivery.md). Small corrections follow [bounded change](docs/workflows/bounded-change.md). Use the [review workflow](docs/workflows/review.md) to select reviewers. Agents check prerequisites themselves. A missing required independent review is incomplete; it is never replaced silently by self-review.
 
