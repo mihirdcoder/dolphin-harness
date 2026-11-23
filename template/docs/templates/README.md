@@ -14,4 +14,6 @@ The [documentation standard](../standards/documentation.md#file-lifecycle) owns 
 - [Planning notes](planning-notes.md)
 - [Decision](decision.md)
 - [Role brief](agent.md)
+- [Role registrations](registration.md)
 - [Workflow](workflow.md)
+- [Skill](skill.md)

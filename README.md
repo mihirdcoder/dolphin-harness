@@ -12,7 +12,7 @@ It was distilled from production projects, where it evolved through daily use wi
 - **Roles that work in more than one tool.** One canonical brief per role, loaded by thin registrations for Claude Code and Codex.
 - **Work that survives a session.** Every delivery has an on-disk checkpoint that a fresh session can verify and resume.
 - **Self-maintenance.** A closeout gate and a reconciliation skill make updating the knowledge part of finishing the work.
-- **A way to change the harness itself.** Workflows, roles and gates are added, changed and removed by a recorded decision.
+- **A way to change the harness itself.** Workflows, roles, gates and skills are added, changed and removed by a recorded decision, through the change-harness skill. Something you just finished can be captured as a named workflow, role or skill, and a new session is tested on the words you will use to ask for it.
 
 ## What it does not give
 
@@ -28,6 +28,8 @@ Nothing here is enforced by Git or CI. Every gate is an obligation the agent is 
 | [template/](template/) | The files that go into a project. |
 | [Article](docs/agentic-development-without-scope-creep.md) | How the harness keeps delegated work in scope and gives agents current context. |
 | [Workflow and task lifecycle](docs/workflow-and-task-lifecycle.md) | Stages, ownership, later iterations, and workflow maintenance. |
+| [The task has to fit the model](docs/how-i-route-work-for-coding-agents.md) | How the contract-review gate was found, and how to trace a bad result back to its assignment. |
+| [The model is rarely the problem](docs/task-model-context.md) | The full walkthrough: one small product, two requests, and how routing, workflows, roles, closeout and change-harness give each task the context it needs. |
 
 ## Two layers
 

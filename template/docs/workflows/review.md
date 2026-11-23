@@ -24,6 +24,7 @@ Minimum responsibilities. Add rows for the project's own boundaries, and add cov
 | User-visible interface behavior | Independent execution of the real journey; unchanged interface files do not waive this | Tester |
 | Every delivered change's knowledge reconciliation | Independent documentation verification under the [closeout gate](../standards/documentation.md#closeout-gate) | Any independent reviewer; see [proportionality](#proportional-executions-and-independence) |
 | An actual pull request | Complete assessment under the [final gate](#final-pull-request-readiness) | Main session; see the final gate |
+| A workflow, role, gate or skill added, changed or retired | Every file in the item's file table, the check-script result and new-session probe evidence, under [change-harness verification](../../.agents/skills/change-harness/references/verify.md) and [DEC-006](../decisions/DEC-006-change-harness-skill.md) | [Documentation Reviewer](../agents/documentation-reviewer.md) |
 | *Starter gate:* new feature or material architecture or scope change | Review of the plan against current code before implementation, under [feature delivery](feature-delivery.md) and [DEC-005](../decisions/DEC-005-design-review-gates.md) | [Architect](../agents/architect.md) |
 | *Starter gate:* written contract design, or a material deviation from it | Review before tests and schemas derive from it, under DEC-005 | Architect |
 

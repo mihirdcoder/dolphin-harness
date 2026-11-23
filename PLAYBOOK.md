@@ -6,7 +6,7 @@ The authoritative rules are in `docs/standards/documentation.md` (when each file
 
 ## Starting a project with nothing
 
-- **Create:** `AGENTS.md`, `CLAUDE.md`, `docs/README.md` (router), the workflows, the documentation standard, the role briefs and loaders, the maintain-knowledge skill, an empty capability index and work index.
+- **Create:** `AGENTS.md`, `CLAUDE.md`, `docs/README.md` (router), the workflows, the documentation standard, the role briefs and loaders, the maintain-knowledge and change-harness skills, an empty capability index and work index.
 - **Do not create:** capability folders, standards or roles that have no content yet. Empty scaffolding reads as a rule that does not exist.
 - **Keeps it current:** the adoption itself is recorded as the first change.
 - **See:** [ADOPT.md](ADOPT.md).
@@ -41,32 +41,40 @@ The authoritative rules are in `docs/standards/documentation.md` (when each file
 - **Create:** a compact record, or a new entry in the existing change record. No feature dossier.
 - **Review:** one qualified independent reviewer may cover the correction, the existing test evidence and the documentation.
 
+## You just did something you will do again
+
+- **Rule:** capture it while the run is fresh. Ask in plain words, such as "make this a workflow called price-change" or "turn this into an agent", or call the change-harness skill by name.
+- **What happens:** the agent rebuilds the run from the chat, the diff and its record. It asks how you will ask for it next time, what counts as done and what needs your go-ahead, then classifies it as a clause, a variant, a gate, a new workflow, a role or a skill. It keeps the name you gave.
+- **Create:** a decision, the item, and every route to it, from the skill's file table for that kind.
+- **Keeps it current:** a new session in each tool is given your words, without the item's name, and must select it.
+- **Originating example:** after the integration and production branches diverged during a release, the fix became one clause in the release variant of operations, not a new workflow.
+
 ## A kind of task keeps recurring
 
 - **Ask:** does it have its own lifecycle, with different triggers, owners or gates from every existing workflow?
 - **If no:** add a variant or a paragraph to the workflow that already owns that lifecycle.
-- **If yes:** follow "Changing the harness" in `docs/workflows/knowledge-maintenance.md`: evidence, check for extension, decision, write from the template, connect the index, prove with a real task.
+- **If yes:** follow "Changing the harness" in `docs/workflows/knowledge-maintenance.md`: evidence, check for extension, decision, write from the template, connect the index, prove with a real task. The change-harness skill carries this out.
 
 ## A kind of expertise keeps recurring
 
 - **Ask:** is there a distinct responsibility or ownership boundary that has shown up more than once?
-- **If yes:** write one canonical brief in `docs/agents/`, add a thin loader for each tool, add a row to the role index, and say in the review or delivery workflow when the role is selected.
+- **If yes:** write one canonical brief in `docs/agents/`, add a thin loader for each tool, add a row to the role index, and say in the review or delivery workflow when the role is selected. The change-harness skill's role reference lists every file.
 - **Do not:** create a role for a single feature, or copy the brief into the loaders.
 - **Originating example:** a design role produced interactive mockups with a specific review tool. The role (owns journeys and mockups before production code) is the reusable part. The tool is that project's implementation, named in the brief.
 
 ## A review found something the process missed
 
 - **Rule:** trace where each finding came from. If an existing gate could not have caught it, the process has a gap.
-- **Create:** a decision with the evidence, then a new step or gate in the owning workflow, annotated with that decision.
+- **Create:** a decision with the evidence, then a new step or gate in the owning workflow, annotated with that decision. The change-harness skill's gate reference covers where to place it and what else must change.
 - **Originating example:** the second architecture gate, described in [PRINCIPLES.md](PRINCIPLES.md#13-the-harness-changes-by-decision-and-gates-are-earned).
 
 ## A gate or role is no longer earning its cost
 
-- **Rule:** remove it the same way it was added: a decision with the reason, then update the workflow, index and registrations. Keep the old decision and mark it superseded.
+- **Rule:** remove it the same way it was added: a decision with the reason, then update the workflow, index and registrations. Keep the old decision and mark it superseded. Use change-harness.
 
 ## A useful habit exists only in chat or agent memory
 
-- **Rule:** promote it. Write the procedure into the owning workflow, add the file's lifecycle row if it creates a file, and record the decision. Then remove the private copy.
+- **Rule:** promote it with change-harness. Write the procedure into the owning workflow, add the file's lifecycle row if it creates a file, and record the decision. Then remove the private copy.
 
 ## Guidance has been replaced
 

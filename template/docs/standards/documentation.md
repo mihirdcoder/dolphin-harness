@@ -124,4 +124,4 @@ Cite history by commit, path and section. Check that the cited commit stays reac
 
 ## Verification of guidance changes
 
-Verify moved links and anchors, rule IDs and source claims. Follow one realistic task from the router to the role, workflow and capability. Check loader paths and skill discovery when they are affected. Validate a complex routing change with an actual bounded run in each tool. A failed or unavailable probe is a recorded limit. An agent's own report that it read a file is not proof.
+Verify moved links and anchors, rule IDs and source claims. Follow one realistic task from the router to the role, workflow and capability. Check loader paths and skill discovery when they are affected; the [change-harness check script](../../.agents/skills/change-harness/scripts/check_harness.py) covers registrations, skill links, indexes, links and placeholders. Validate a complex routing change with an actual bounded run in each tool. A failed or unavailable probe is a recorded limit. An agent's own report that it read a file is not proof.

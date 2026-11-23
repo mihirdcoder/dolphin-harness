@@ -80,7 +80,7 @@ When a working habit proves useful, it is promoted into the repository as a work
 
 ## 13. The harness changes by decision, and gates are earned
 
-A workflow, role, gate or standard is added when evidence shows the need: a recurring task, recurring expertise, or a failure the process missed. A decision records the reason and the approval. Then the index, router and registrations are updated, and one real task is run through the change.
+A workflow, role, gate or standard is added when evidence shows the need: a recurring task, recurring expertise, or a failure the process missed. A decision records the reason and the approval. Then the index, router and registrations are updated, and one real task is run through the change. The most common evidence is work just finished that the owner wants to repeat: it is captured under a name while the run is fresh, and the owner's words for asking become the trigger that is tested.
 
 *From the originating project:* feature delivery had one architecture review, of the plan. During one release an extra review of the written API contracts, run only because the owner asked, found nine new problems. Seven came from the contract document written after the plan review, so the first review could not have caught them. A second gate was added by decision, with that evidence attached. A project without written contracts would not need it.
 
@@ -101,7 +101,8 @@ Implemented, verified, published and deployed are separate states, and none is i
 | Capability and change structure, history index | The planning conversation rules |
 | Delivery checkpoints and transition history | The design and operations workflows |
 | Closeout gate and the maintain-knowledge skill | The seven starter roles |
+| The change-harness skill and its check script | |
 | Canonical role body with thin loaders | The example development and testing rules |
 | The procedure for changing the harness | The design-review decision (DEC-005), which a project may supersede |
-| The four framework decisions (DEC-001 to DEC-004) | |
+| The framework decisions (DEC-001 to DEC-004 and DEC-006) | |
 | The rule that every gate has a recorded reason | |

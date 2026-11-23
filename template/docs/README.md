@@ -11,6 +11,7 @@ Start with the [session protocol](workflows/session.md), then select the active 
 | Test existing functionality without repairs | [Verification](workflows/verification.md) | [Tester](agents/tester.md) |
 | Review selection, domain review or final pull request readiness | [Review workflow](workflows/review.md) | The selected [reviewer role](agents/README.md) |
 | Guidance or durable knowledge updates | [Documentation standard](standards/documentation.md) and [maintain-knowledge](../.agents/skills/maintain-knowledge/SKILL.md) | Main session |
+| Change the harness: a workflow, role, gate or skill, or make finished work reusable | [Changing the harness](workflows/knowledge-maintenance.md#changing-the-harness) and [change-harness](../.agents/skills/change-harness/SKILL.md) | Main session |
 | Resume existing work | [Work index](work/README.md), the owning checkpoint and verified current Git state | Main session |
 
 <!-- Add one row per additional domain (for example infrastructure, data, a core library): its entry document and owning role. -->

@@ -7,7 +7,7 @@ Do not commit, push, delete existing guidance or change code unless the owner ha
 ## 1. Read before writing
 
 1. Read [PRINCIPLES.md](PRINCIPLES.md) and [PLAYBOOK.md](PLAYBOOK.md) in full.
-2. Read the template in this order: `template/AGENTS.md`, `template/docs/README.md`, `template/docs/glossary.md`, `template/docs/workflows/README.md` and `session.md`, `template/docs/standards/documentation.md`, `template/docs/agents/README.md` and `common.md`, `template/.agents/skills/maintain-knowledge/SKILL.md`. Read the remaining workflows and roles as you decide whether to keep them.
+2. Read the template in this order: `template/AGENTS.md`, `template/docs/README.md`, `template/docs/glossary.md`, `template/docs/workflows/README.md` and `session.md`, `template/docs/standards/documentation.md`, `template/docs/agents/README.md` and `common.md`, `template/.agents/skills/maintain-knowledge/SKILL.md` and `template/.agents/skills/change-harness/SKILL.md`. Read the remaining workflows and roles as you decide whether to keep them.
 
 ## 2. Inspect the target project
 
@@ -54,7 +54,7 @@ Every template file states its layer on its first lines.
 - `docs/standards/documentation.md`
 - `docs/agents/README.md`, `common.md`
 - `docs/templates/`, `docs/decisions/README.md`, `docs/capabilities/README.md`, `docs/work/README.md`, `docs/reference/agent-setup.md`
-- `.agents/skills/maintain-knowledge/`
+- `.agents/skills/maintain-knowledge/` and `.agents/skills/change-harness/`, with their `.claude/skills/` symlinks when Claude Code is used
 
 **Starter set. Keep, edit or delete by evidence:**
 
@@ -87,7 +87,7 @@ This is what the smallest setup looks like when it is consistent. Use it as the 
 | `workflows/feature-delivery.md` | Four steps: scope, build, independent review, closeout. No design-review gates. |
 | `workflows/review.md` | The two starter-gate rows are removed. Every other row stays, with the reviewer in the third column. The documentation and final-assessment paragraphs name a fresh-context run of the reviewer. |
 | `docs/agents/README.md` | Two rows: implementer and reviewer. Five briefs and their loaders are deleted. |
-| `docs/decisions/` | DEC-001 to DEC-004 unchanged. DEC-005 marked superseded by DEC-006 (section 7). |
+| `docs/decisions/` | DEC-001 to DEC-004 and DEC-006 unchanged. DEC-005 marked superseded by DEC-007 (section 7). |
 
 A solo project still gets independence: the reviewer runs in a fresh context and is never the session that wrote the change. If that cannot happen, the check is recorded as incomplete.
 
@@ -99,22 +99,24 @@ Start with the smallest roster that covers the project's real boundaries. Rename
 2. Keep one loader per tool: `.claude/agents/<role>.md` and `.codex/agents/<role>.toml`. A loader holds the name, a one-line description, the tool list and the instruction to read the brief. Never copy the brief into it.
 3. Add the role to `docs/agents/README.md`.
 
+The [change-harness role reference](template/.agents/skills/change-harness/references/role.md) lists every file a role touches. Roles added after adoption go through that skill.
+
 Delete the loaders and briefs of roles you drop. If the team uses one tool, delete the other tool's registrations and say so in `docs/reference/agent-setup.md`.
 
 ## 7. Carry the inherited decisions
 
-`template/docs/decisions/` holds five decisions that explain why the harness is shaped this way. They were taken in the project the harness came from and arrive **Approved**. Copy them as they are. Do not ask the owner to approve them again.
+`template/docs/decisions/` holds six decisions that explain why the harness is shaped this way. DEC-001 to DEC-005 were taken in the project the harness came from; DEC-006 was taken in the harness itself. They arrive **Approved**. Copy them as they are. Do not ask the owner to approve them again.
 
 What the project accepts by adopting:
 
 | Decision | Accepted | Notes |
 | --- | --- | --- |
-| DEC-001 to DEC-004 | Always | They are the framework. A project that rejects one is not adopting this harness. |
+| DEC-001 to DEC-004, DEC-006 | Always | They are the framework. A project that rejects one is not adopting this harness. |
 | DEC-005 (two design-review gates) | Only if the project keeps both gates unchanged | Any setup with one gate or none supersedes it during adoption. |
 
 A project changes a decision the way any decision is changed: record a new decision that supersedes it, with the reason and the owner's approval, mark the old one superseded, and update the rule or gate it authorized.
 
-**If the setup chosen in section 5 drops or changes a design-review gate, write the superseding decision now.** Do not leave DEC-005 Approved beside a workflow that contradicts it. Record `DEC-006` from the decision template: what the project does instead, why (project size, no written contracts, a single author), and the owner's answer to question 3 in their words as the approval. Set DEC-005's status to "Superseded by DEC-006", update the decision index, and remove the starter-gate rows from the review selection table. The same applies to any other starter gate removed later.
+**If the setup chosen in section 5 drops or changes a design-review gate, write the superseding decision now.** Do not leave DEC-005 Approved beside a workflow that contradicts it. Record `DEC-007` from the decision template: what the project does instead, why (project size, no written contracts, a single author), and the owner's answer to question 3 in their words as the approval. Set DEC-005's status to "Superseded by DEC-007", update the decision index, and remove the starter-gate rows from the review selection table. The same applies to any other starter gate removed later.
 
 New project decisions continue the same numbering.
 
@@ -130,10 +132,9 @@ Create content only where it exists. Do not generate empty folders.
 
 ## 9. Prove it
 
-1. **Links:** every relative link and anchor in the copied files resolves.
-2. **Placeholders:** no `{{` remains.
-3. **Registrations:** each role is discoverable in each tool the team uses, and the skill symlink in `.claude/skills/` resolves.
-4. **Routes:** run three real probes in a fresh session of each tool and record what happened:
+1. **Static check:** from the project root, run `python3 .agents/skills/change-harness/scripts/check_harness.py`. It checks that relative links and anchors resolve, no `{{` remains, every role has a brief, an index row and a registration per tool with matching descriptions, every skill's `.claude/skills/` symlink resolves, and the workflow and decision indexes are complete. Fix every failure.
+2. **Registrations:** each role and skill is discoverable in a new session of each tool the team uses.
+3. **Routes:** run three real probes in a fresh session of each tool and record what happened:
    - a question about existing behavior, answered from the capability documents and code;
    - a small bounded change, ending with a compact record and a closeout disposition;
    - a resume: a new session finds the unfinished work from the work index and verifies the checkpoint against Git before acting.
@@ -144,4 +145,4 @@ A probe that fails or cannot run is recorded as a limit. Do not report that agen
 
 The adoption is the project's first delivery. Record it in `docs/work/changes/harness-adoption/record.md` using the compact template: what was adopted, what was dropped and why, the owner's decisions in their words, probe results, and what remains. Link it from `docs/work/README.md`.
 
-Report to the owner: files created, starter items kept and dropped, inherited decisions superseded, probe results and limits.
+Report to the owner: files created, starter items kept and dropped, inherited decisions superseded, probe results and limits. Tell them that later workflows, roles and skills are added with change-harness, for example by saying "make this a workflow" after finishing something they will do again.
